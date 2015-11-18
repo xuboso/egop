@@ -1,0 +1,40 @@
+{
+  "name": "egop",
+  "description": "",
+  "main": "",
+  "authors": [
+    "bude <xubobox@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bude"
+  ],
+  "homepage": "https://github.com/xuboso/egop",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.3",
+    "underscore": "~1.8.3",
+    "jquery-pjax": "~1.9.6",
+    "sweetalert": "~1.1.3",
+    "typeahead.js": "~0.11.1",
+    "clipboard": "~1.5.5",
+    "respond": "~1.4.2",
+    "masonry": "~3.3.2",
+    "dropzone": "~4.2.0",
+    "PACE": "pace#~1.0.2",
+    "headroom.js": "~0.7.0",
+    "smartcrop": "*",
+    "selectize": "~0.12.1"
+  }
+}
