@@ -1,0 +1,1 @@
+[semantic version](http://semver.org/)
