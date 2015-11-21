@@ -7,3 +7,4 @@
 [Create website using laravel5 elixir](http://www.codeheaps.com/php-programming/creating-website-using-laravel-5-elixir-assets/)
 [Minify and combine css and js using Laravel elixir](http://www.techigniter.in/tutorials/minify-and-combine-css-and-js-using-laravel-elixir/)
 [Run gulp tasks in laravel easily with elixir](https://scotch.io/tutorials/run-gulp-tasks-in-laravel-easily-with-elixir)
+[semantic version](http://semver.org/)
