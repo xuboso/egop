@@ -27,7 +27,9 @@ var scriptPaths = {
  */
 
 elixir(function(mix) {
-   mix.styles([
+    // mix.copy(bowerDir + 'AdminLTE/build/**', 'resources/assets/less/AdminLTe');
+    mix.less('admin.less', 'public/css/admin/admin.css');
+    mix.styles([
         stylePaths.bootstrap,
         stylePaths.fontawesome,
         stylePaths.ionicons,
