@@ -7,12 +7,14 @@ var stylePaths = {
     'ionicons': bowerDir + 'ionicons/css/ionicons.min.css',
     'adminlte': bowerDir + 'AdminLTE/dist/css/AdminLTE.min.css',
     'skins': bowerDir + 'AdminLTE/dist/css/skins/skin-blue.min.css',
+    'icheck': bowerDir + 'AdminLTE/plugins/iCheck/square/blue.css',
 };
 
 var scriptPaths = {
     'jquery': bowerDir + 'jquery/dist/jquery.min.js',
     'bootstrap': bowerDir +'bootstrap/dist/js/bootstrap.min.js',
     'adminlte': bowerDir + 'AdminLTE/dist/js/app.min.js',
+    'icheck': bowerDir + 'AdminLTE/plugins/iCheck/icheck.min.js',
 };
 
 /*
@@ -27,20 +29,21 @@ var scriptPaths = {
  */
 
 elixir(function(mix) {
-    // mix.copy(bowerDir + 'AdminLTE/build/**', 'resources/assets/less/AdminLTe');
     mix.less('admin.less', 'public/css/admin/admin.css');
+
+    mix.copy(stylePaths.bootstrap, 'public/css/admin');
+    mix.copy(stylePaths.fontawesome, 'public/css/admin');
+    mix.copy(scriptPaths.icheck, 'public/js/admin');
+
     mix.styles([
-        stylePaths.bootstrap,
-        stylePaths.fontawesome,
         stylePaths.ionicons,
-        stylePaths.adminlte,
-        stylePaths.skins
+        stylePaths.skins,
+        stylePaths.icheck,
     ], 'public/css/admin/vendor.css');
 
     mix.scripts([
         scriptPaths.jquery,
         scriptPaths.bootstrap,
-        scriptPaths.adminlte,
     ], 'public/js/admin/vendor.js');
 
     mix.version(['public/css/admin/vendor.css', 'public/js/admin/vendor.js']);
