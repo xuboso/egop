@@ -36,6 +36,8 @@ elixir(function(mix) {
     mix.copy(scriptPaths.icheck, 'public/js/admin');
 
     mix.styles([
+        stylePaths.bootstrap,
+        stylePaths.fontawesome,
         stylePaths.ionicons,
         stylePaths.skins,
         stylePaths.icheck,
