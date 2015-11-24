@@ -46,6 +46,7 @@ elixir(function(mix) {
     mix.scripts([
         scriptPaths.jquery,
         scriptPaths.bootstrap,
+        scriptPaths.adminlte,
     ], 'public/js/admin/vendor.js');
 
     mix.version(['public/css/admin/vendor.css', 'public/js/admin/vendor.js']);
