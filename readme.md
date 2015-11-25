@@ -1,6 +1,6 @@
 ## Egop
 
-Egop is my person project for learn Laravel5. I will create egop-ios and egop-android.
+Egop is my personal project for learn Laravel5. I will create egop-ios and egop-android.
 
 Egop is a shop system I will build.
 
