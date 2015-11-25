@@ -43,9 +43,9 @@ class GenerateUser extends Command
     {
         $name = $this->ask("Please enter your name");
         $email = $this->ask("Please enter your email");
-        $password = $this->ask("Please enter your password");
+        $password = $this->secret("Please enter your password");
 
-        $roles = $this->choice("Choose role you want have,seperated by comma", ["su", "admin", "user"], null, null, true);
+        $roles = $this->choice("Choose role you want have,seperated by comma", ["su", "user", "admin"], true, null, false);
 
         if ($this->confirm("Do you wish to generate? [y|N]"))
         {
