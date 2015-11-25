@@ -45,17 +45,17 @@ class GenerateUser extends Command
         $email = $this->ask("Please enter your email");
         $password = $this->secret("Please enter your password");
 
-        $roles = $this->choice("Choose role you want have,seperated by comma", ["su", "user", "admin"], true, null, false);
+        $role_choice = $this->choice("Choose role you want have,seperated by comma", ["su", "user", "admin"], true, null, false);
 
         if ($this->confirm("Do you wish to generate? [y|N]"))
         {
             $user = new User();
             $user->name = $name;
             $user->email = $email;
-            $user->password = Crypt::encrypt($password);
+            $user->password = bcrypt($password);
             $user->save();
 
-            $role = Role::where('name', 'user')->first();
+            $role = Role::where('name', $role_choice)->first();
             $user->attachRole($role);
         }
         
