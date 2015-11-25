@@ -3,7 +3,6 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Role;
-use App\Permission;
 
 class RoleTableSeeder extends Seeder
 {

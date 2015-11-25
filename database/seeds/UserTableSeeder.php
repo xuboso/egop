@@ -3,7 +3,6 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
-use App\Role;
 
 class UserTableSeeder extends Seeder
 {
