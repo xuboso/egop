@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Mail;
 
 class AuthController extends Controller
 {
@@ -21,7 +23,9 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins {
+        AuthenticatesAndRegistersUsers::postRegister as register;
+    }
 
     /**
      * Create a new authentication controller instance.
@@ -61,5 +65,18 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function postRegister(Request $request)
+    {
+        $redirect = $this->register($request);
+        $user = $request->user();
+
+        Mail::send('emails.activation', ['user' => $user], function($m) use ($user) {
+            $m->from('no-reply@egop.com', 'Egop System');
+            $m->to($user->email, $user->name)->subject("Please activate you account!");
+        });
+
+        return $redirect;
     }
 }
