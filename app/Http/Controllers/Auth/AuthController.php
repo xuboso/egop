@@ -55,6 +55,7 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
+     * @see http://transmission.vehikl.com/do-more-during-registration-in-laravel-5/
      * @param  array  $data
      * @return User
      */
