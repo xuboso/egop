@@ -27,6 +27,8 @@ class AuthController extends Controller
         AuthenticatesAndRegistersUsers::postRegister as register;
     }
 
+    protected $redirectTo = '/';
+
     /**
      * Create a new authentication controller instance.
      *
