@@ -72,8 +72,8 @@ class AuthController extends Controller
     {
         $redirect = $this->register($request);
         $user = $request->user();
-
-        Mail::send('emails.activation', ['user' => $user], function($m) use ($user) {
+        
+        Mail::queue('emails.activation', ['user' => $user], function($m) use ($user) {
             $m->from('no-reply@egop.com', 'Egop System');
             $m->to($user->email, $user->name)->subject("Please activate you account!");
         });
